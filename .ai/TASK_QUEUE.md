@@ -5,6 +5,7 @@
 
 | # | 任務 | 狀態 | 任務單 | 備註 |
 |---|------|------|--------|------|
+| 2 | bootstrap-project 移植腳本 | review | .ai/tasks/bootstrap-project.md | branch: feature/bootstrap-script；審查通過（1 輪修正），待 merge 核准 |
 
 ## 已完成
 
