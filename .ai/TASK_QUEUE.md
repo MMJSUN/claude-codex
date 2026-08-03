@@ -5,7 +5,7 @@
 
 | # | 任務 | 狀態 | 任務單 | 備註 |
 |---|------|------|--------|------|
-| 1 | （範例）通知系統 | todo | .ai/tasks/notification.md | — |
+| 1 | verify-setup 環境檢查腳本 | review | .ai/tasks/verify-setup.md | branch: feature/verify-setup；審查通過，待 merge 核准 |
 
 ## 已完成
 
