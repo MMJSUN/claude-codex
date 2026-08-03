@@ -72,10 +72,29 @@ else
     ((failures += 1))
 fi
 
+if [[ -n $claude_path && -x $claude_path ]]; then
+    mcp_list=$(claude mcp list 2>&1)
+    codex_line=$(printf '%s\n' "$mcp_list" | grep '^codex:' || true)
+    if [[ $codex_line == *Connected* ]]; then
+        one_line "$codex_line"
+        printf '[OK] codex MCP: %s\n' "$REPLY"
+    elif [[ -n $codex_line ]]; then
+        one_line "$codex_line"
+        printf '[FAIL] codex MCP registered but not connected: %s\n' "$REPLY"
+        ((failures += 1))
+    else
+        printf '[FAIL] codex MCP server not registered (claude mcp add --scope user codex -- codex mcp-server)\n'
+        ((failures += 1))
+    fi
+else
+    printf '[FAIL] codex MCP check skipped: claude command not available\n'
+    ((failures += 1))
+fi
+
 if ((failures == 0)); then
-    printf 'Summary: all 5 checks passed.\n'
+    printf 'Summary: all 6 checks passed.\n'
     exit 0
 fi
 
-printf 'Summary: %d of 5 checks failed.\n' "$failures"
+printf 'Summary: %d of 6 checks failed.\n' "$failures"
 exit 1

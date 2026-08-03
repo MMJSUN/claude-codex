@@ -5,6 +5,7 @@
 
 | # | 任務 | 狀態 | 任務單 | 備註 |
 |---|------|------|--------|------|
+| 3 | verify-setup 補 MCP 註冊檢查 | in-progress | .ai/tasks/verify-mcp-check.md | 小型修改，Tech Lead 自行實作 |
 
 ## 已完成
 
