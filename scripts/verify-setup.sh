@@ -91,10 +91,35 @@ else
     ((failures += 1))
 fi
 
+gh_path=$(command -v gh 2>/dev/null || true)
+if [[ -n $gh_path && -x $gh_path ]]; then
+    if gh_version=$(gh --version 2>&1); then
+        one_line "${gh_version%%$'\n'*}"
+        printf '[OK] gh: %s\n' "$REPLY"
+    else
+        one_line "$gh_version"
+        printf '[FAIL] gh version check failed: %s\n' "$REPLY"
+        ((failures += 1))
+    fi
+else
+    printf '[FAIL] gh command not found or not executable\n'
+    ((failures += 1))
+fi
+
+if gh_auth=$(gh auth status 2>&1); then
+    auth_line=$(printf '%s\n' "$gh_auth" | grep -m1 'Logged in to' | sed 's/^[[:space:]]*//' || true)
+    one_line "${auth_line:-authenticated}"
+    printf '[OK] gh auth: %s\n' "$REPLY"
+else
+    one_line "${gh_auth%%$'\n'*}"
+    printf '[FAIL] gh auth status check failed: %s\n' "$REPLY"
+    ((failures += 1))
+fi
+
 if ((failures == 0)); then
-    printf 'Summary: all 6 checks passed.\n'
+    printf 'Summary: all 8 checks passed.\n'
     exit 0
 fi
 
-printf 'Summary: %d of 6 checks failed.\n' "$failures"
+printf 'Summary: %d of 8 checks failed.\n' "$failures"
 exit 1
