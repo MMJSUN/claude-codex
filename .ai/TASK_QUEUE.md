@@ -5,8 +5,9 @@
 
 | # | 任務 | 狀態 | 任務單 | 備註 |
 |---|------|------|--------|------|
-| 1 | verify-setup 環境檢查腳本 | review | .ai/tasks/verify-setup.md | branch: feature/verify-setup；審查通過，待 merge 核准 |
 
 ## 已完成
 
-（done 的任務移到這裡，保留紀錄）
+| # | 任務 | 狀態 | 任務單 | 備註 |
+|---|------|------|--------|------|
+| 1 | verify-setup 環境檢查腳本 | done | .ai/tasks/verify-setup.md | 2026-08-03 merge 進 main（0118d9b） |
