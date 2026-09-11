@@ -13,4 +13,4 @@
 | 2 | bootstrap-project 移植腳本 | done | .ai/tasks/bootstrap-project.md | 2026-08-03 merge 進 main（6a7d49b）；1 輪修正 |
 | 3 | verify-setup 補 MCP 註冊檢查 | done | .ai/tasks/verify-mcp-check.md | 2026-08-03 merge 進 main；小型修改，Tech Lead 自行實作 |
 | 4 | verify-setup 補 gh CLI 檢查 | done | .ai/tasks/verify-gh-check.md | 2026-08-03 PR 流程；小型修改，Tech Lead 自行實作 |
-| 5 | README | review | .ai/tasks/readme.md | 2026-09-12 PR 流程；小型修改，Tech Lead 自行實作 |
+| 5 | README | done | .ai/tasks/readme.md | 2026-09-12 merge 進 main（c27f092）；PR #3；小型修改，Tech Lead 自行實作 |
